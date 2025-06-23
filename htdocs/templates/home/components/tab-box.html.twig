@@ -1,0 +1,15 @@
+{% block nav %}
+	<div class="tab-box">
+		<div class="tab-image">
+			<img src="{{ asset(imageName) }}" alt="">
+		</div>
+
+		<div class="tab-details">
+			<p>
+				{{ name }}
+				<br>
+				{{ amount }}
+			</p>
+		</div>
+	</div>
+{% endblock %}

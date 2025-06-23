@@ -7,5 +7,17 @@
 		<img src="{{ asset('images/navigation/plus-icon.svg') }}" alt="">
 	</div>
 
+	<section class="tabs">
+		{% for tab in tabList %}
+				<div class="tab-item">
+					{% include "home/components/tab-box.html.twig" with ({
+						name: tab.name,
+						amount: tab.amount,
+						imageName: tab.imageName,
+					}) %}
+				</div>
+		{% endfor %}
+	</section>
+
 	{% include "home/components/nav.html.twig" %}
 {% endblock %}

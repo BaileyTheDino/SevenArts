@@ -1,0 +1,34 @@
+.tab-box {
+	cursor: pointer;
+
+	display: grid;
+	grid-template-columns: 4fr 3fr;
+	align-items: center;
+	justify-content: center;
+	justify-items: center;
+
+	border-radius: 20px;
+	backdrop-filter: blur(10px);
+
+	.tab-image {
+		background-color: var(--offblack);
+		border-radius: 10px;
+
+		width: 200px;
+		aspect-ratio: 1;
+
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 80px;
+		}
+	}
+
+	.tab-details {
+		p {
+			line-height: 25px;
+		}
+	}
+}

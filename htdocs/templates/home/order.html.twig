@@ -7,5 +7,27 @@
 		<img src="{{ asset('images/navigation/cart-icon.svg') }}" alt="">
 	</div>
 
+	<section class="product-selection">
+		{% for sectionName, sectionProducts in productList %}
+			<div class="product-section">
+				<div class="divider">
+					{{ sectionName }}
+					<img src="{{ asset('images/order/divider-line.svg') }}" alt="">
+				</div>
+
+				<div class="product-list">
+					{% for product in sectionProducts %}
+						{% include "home/components/product-box.html.twig" with ({
+							name: product.name,
+							amount: product.amount,
+							value: product.value,
+							imageName: product.imageName,
+						}) %}
+					{% endfor %}
+				</div>
+			</div>
+		{% endfor %}
+	</section>
+
 	{% include "home/components/nav.html.twig" %}
 {% endblock %}

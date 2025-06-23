@@ -1,0 +1,17 @@
+{% block nav %}
+	<div class="product-box">
+		<div class="product-image">
+			<img src="{{ asset(imageName) }}" alt="">
+		</div>
+
+		<div class="product-details">
+			<p>
+				{{ name }}
+				<br>
+				{{ amount }}
+				<br>
+				{{ value }}
+			</p>
+		</div>
+	</div>
+{% endblock %}
