@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Usage: phpstan
+## Description: Performs phpstan analyse.
+## Example: ddev phpstan
+
+cd htdocs/
+vendor/bin/phpstan analyse

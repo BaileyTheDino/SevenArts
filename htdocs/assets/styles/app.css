@@ -1,0 +1,15 @@
+* {
+	box-sizing: border-box;
+	color: var(--text-color);
+	font-family: sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.main-bg-image {
+	background-image: url("../images/swirly.svg");
+	background-repeat: no-repeat;
+	background-position: top;
+}

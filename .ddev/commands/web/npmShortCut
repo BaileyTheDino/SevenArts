@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Usage: npm [args]
+## Description: Performs a npm command.
+## Example: ddev npm install
+
+cd htdocs/
+npm $@

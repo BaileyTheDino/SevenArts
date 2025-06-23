@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<header>
+		Is tab page
+	</header>
+
+	<a href="{{ path('app.order') }}">To ordering</a>
+	<a href="{{ path('app.tab') }}">To tabs</a>
+	<a href="{{ path('app.logout') }}">Logout</a>
+{% endblock %}

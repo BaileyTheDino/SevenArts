@@ -1,0 +1,9 @@
+RewriteEngine on
+
+# Don't rewrite calls to .well-known
+RewriteRule ^\.well-known/.+ - [END]
+
+# Rewrite to front controller
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule . index.php [END]

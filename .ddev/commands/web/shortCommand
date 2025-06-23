@@ -1,0 +1,8 @@
+#!/bin/bash
+
+## Usage: c [args]
+## Description: Performs a command inside of web container.
+## Example: ddev c cache:clear
+
+cd htdocs/
+bin/console $@

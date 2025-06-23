@@ -1,0 +1,58 @@
+grumphp:
+  ascii:
+    failed: ~
+    succeeded: ~
+
+  hooks_preset: local
+
+  git_hook_variables:
+    EXEC_GRUMPHP_COMMAND: 'lando php'
+    GRUMPHP_PROJECT_DIR: 'htdocs'
+    GRUMPHP_COMPOSER_DIR: 'htdocs'
+    GRUMPHP_BIN_DIR: 'htdocs/vendor/bin'
+
+  environment:
+    variables:
+      XDEBUG_MODE: 'off'
+
+  tasks:
+    composer:
+      file: htdocs/composer.json
+
+    file_size:
+      max_size: 5M
+
+    git_blacklist:
+      keywords:
+        - "die\\("
+        - "var_dump\\("
+        - "print_r\\("
+        - "print\\("
+        - "dump\\("
+        - "debug_backtrace\\("
+        - "exit;"
+        - "echo "
+        - "console.log\\("
+      triggered_by:
+        - php
+        - twig
+        - js
+      regexp_type: E
+
+    ecs:
+      config: ../ecs.php
+      level: ~
+      paths: [ ]
+      files_on_pre_commit: false
+      triggered_by: [ 'php' ]
+      clear-cache: false
+      no-progress-bar: true
+
+    phpstan:
+      configuration: phpstan.neon
+
+    git_commit_message:
+      matchers:
+        "Must contain JIRA ticket.": "/(Merge(.*)|(CCV_ECOMM2022-([0-9]+): (.+)))/"
+      case_insensitive: false
+      max_subject_width: 72

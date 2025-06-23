@@ -1,0 +1,10 @@
+.project
+.settings
+.idea
+.vscode
+atlassian-ide-plugin.xml
+.DS_Store
+*.sql
+*.sql.gz
+*.sql.zip
+*.7z
