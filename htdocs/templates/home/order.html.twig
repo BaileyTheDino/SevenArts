@@ -1,11 +1,11 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-	<header>
-		Is order page
-	</header>
+	{% include "home/components/header.html.twig" %}
 
-	<a href="{{ path('app.order') }}">To ordering</a>
-	<a href="{{ path('app.tab') }}">To tabs</a>
-	<a href="{{ path('app.logout') }}">Logout</a>
+	<div class="cart-widget">
+		<img src="{{ asset('images/navigation/cart-icon.svg') }}" alt="">
+	</div>
+
+	{% include "home/components/nav.html.twig" %}
 {% endblock %}

@@ -1,5 +1,6 @@
 :root {
 	--black: #111111;
+	--offblack: #1A1A1A;
 	--white: #E8E8E8;
 	--offwhite: #b8b8b8;
 	--bg-color: var(--black);

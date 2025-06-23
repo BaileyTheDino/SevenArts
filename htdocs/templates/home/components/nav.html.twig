@@ -1,0 +1,20 @@
+{% block nav %}
+	<nav>
+		{% set currentRoute = app.request.attributes.get('_route') %}
+
+		<a href="{{ path('app.order') }}" class="{% if currentRoute is same as('app.order') %}active{% endif %}">
+			<img src="{{ asset('images/navigation/order-icon.svg') }}" alt="">
+			<p>Order</p>
+		</a>
+
+		<a href="{{ path('app.tab') }}" class="{% if currentRoute is same as('app.tab') %}active{% endif %}">
+			<img src="{{ asset('images/navigation/tab-icon.svg') }}" alt="">
+			<p>Tab</p>
+		</a>
+
+		<a href="{{ path('app.logout') }}">
+			<img src="{{ asset('images/navigation/logout-icon.svg') }}" alt="">
+			<p>Logout</p>
+		</a>
+	</nav>
+{% endblock %}
