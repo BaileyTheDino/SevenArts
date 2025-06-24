@@ -6,4 +6,4 @@
 
 export PHP_CS_FIXER_IGNORE_ENV=1
 cd htdocs/
-./vendor/bin/ecs
+./vendor/bin/ecs --fix

@@ -4,6 +4,18 @@
 
 Simple cashier system for SevenArts. All the things are hardcoded.
 
+## Seven Arts specific commands
+
+```
+# Creates products in the DB
+ddev c app:create-product
+```
+
+```
+# Creates tabs in the DB
+ddev c app:create-tab
+```
+
 ## 💬 Commands
 
 ```

@@ -17,8 +17,7 @@ final class WidgetCodeVerifyController extends AbstractController
     public function __construct(
         #[Autowire('%env(string:LOGIN_CODE)%')]
         private readonly string $code,
-    )
-    {
+    ) {
     }
 
     #[Route('/widgets/login/verify-code', name: 'app.widget.verifyCode')]
@@ -35,6 +34,7 @@ final class WidgetCodeVerifyController extends AbstractController
 
             $response = new JsonResponse(['isValid' => true]);
             $response->headers->setCookie($cookie);
+
             return $response;
         }
 

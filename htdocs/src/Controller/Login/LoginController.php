@@ -13,7 +13,8 @@ final class LoginController extends AbstractController
 {
     public function __construct(
         private readonly AuthChecker $authenticationChecker
-    ) {}
+    ) {
+    }
 
     #[Route('/', name: 'app.login')]
     public function login(): Response

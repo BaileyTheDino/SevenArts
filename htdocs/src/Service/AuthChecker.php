@@ -10,16 +10,16 @@ final readonly class AuthChecker
 {
     public function __construct(
         private readonly RequestStack $requestStack
-    ) {}
+    ) {
+    }
 
     public function isLoggedIn(): bool
     {
         $request = $this->requestStack->getCurrentRequest();
-        if (!$request) {
+        if (! $request) {
             return false;
         }
 
         return $request->cookies->get('loggedIn') === 'true';
     }
-
 }
