@@ -6,7 +6,6 @@ grumphp:
   hooks_preset: local
 
   git_hook_variables:
-    EXEC_GRUMPHP_COMMAND: 'lando php'
     GRUMPHP_PROJECT_DIR: 'htdocs'
     GRUMPHP_COMPOSER_DIR: 'htdocs'
     GRUMPHP_BIN_DIR: 'htdocs/vendor/bin'
