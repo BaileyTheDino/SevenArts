@@ -3,7 +3,7 @@
 {% block body %}
 	{% include "home/components/header.html.twig" %}
 
-	<div class="tab-widget">
+	<div class="js-open-btn tab-widget">
 		<img src="{{ asset('images/navigation/plus-icon.svg') }}" alt="">
 	</div>
 
@@ -18,6 +18,8 @@
 				</div>
 		{% endfor %}
 	</section>
+
+	{% include "home/components/create-tab-popup.html.twig" %}
 
 	{% include "home/components/nav.html.twig" %}
 {% endblock %}

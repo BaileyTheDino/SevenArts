@@ -5,6 +5,8 @@
 }
 
 .product-section {
+	margin-top: 3rem;
+
 	.divider {
 		display: flex;
 		flex-direction: column;

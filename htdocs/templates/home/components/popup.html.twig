@@ -1,0 +1,25 @@
+{% block popup %}
+	<div class="js-popup">
+
+		<div class="popup-inner">
+			{% block popup_header %}
+				<div class="popup-header">
+
+					<h1>
+					{% block title %}
+
+					{% endblock %}
+					</h1>
+
+					{% block close_button %}
+						<a href="#" class="js-close-btn"><img src="{{ asset('images/popup/close-icon.svg') }}" alt=""></a>
+					{% endblock %}
+				</div>
+			{% endblock %}
+
+			{% block popup_inner %}
+			{% endblock %}
+		</div>
+
+	</div>
+{% endblock %}

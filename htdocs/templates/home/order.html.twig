@@ -3,7 +3,7 @@
 {% block body %}
 	{% include "home/components/header.html.twig" %}
 
-	<div class="cart-widget">
+	<div class="js-open-btn cart-widget">
 		<img src="{{ asset('images/navigation/cart-icon.svg') }}" alt="">
 	</div>
 
@@ -28,6 +28,8 @@
 			</div>
 		{% endfor %}
 	</section>
+
+	{% include "home/components/cart-popup.html.twig" %}
 
 	{% include "home/components/nav.html.twig" %}
 {% endblock %}

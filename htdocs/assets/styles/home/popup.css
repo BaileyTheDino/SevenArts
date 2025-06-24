@@ -1,0 +1,35 @@
+.js-popup.open {
+	top: 15vh;
+}
+
+.js-popup {
+	* {
+		color: var(--black);
+	}
+
+	.popup-inner {
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	width: 100vw;
+	height: 85vh;
+	background-color: var(--white);
+
+	position: fixed;
+
+	top: 110vh;
+	left: 0;
+
+	z-index: 9999;
+	transition: all .3s ease-in-out;
+
+	padding-top: 1rem;
+
+	.popup-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
