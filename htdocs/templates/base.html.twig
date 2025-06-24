@@ -10,7 +10,11 @@
 				{% block js_router %}
 					<script>
 						window.routes = {
-							'app.widget.verifyCode': '{{ path('app.widget.verifyCode') }}'
+							'app.widget.verifyCode': '{{ path('app.widget.verifyCode') }}',
+							'app.widget.cart.getContent': '{{ path('app.widget.cart.getContent') }}',
+							'app.widget.cart.payNow': '{{ path('app.widget.cart.payNow') }}',
+							'app.widget.cart.addToTab': '{{ path('app.widget.cart.addToTab') }}',
+							'app.widget.tab.getTabs': '{{ path('app.widget.tab.getTabs') }}',
 						};
 					</script>
 				{% endblock %}

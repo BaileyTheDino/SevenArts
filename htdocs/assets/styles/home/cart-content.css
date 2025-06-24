@@ -1,0 +1,36 @@
+.cart-content {
+	.record {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.cart-divider {
+		background-color: var(--black);
+		height: 4px;
+		width: 100%;
+	}
+}
+
+.cart-actions {
+
+	margin-top: 4rem;
+	.action-group {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+		margin-bottom: 20px;
+
+		button {
+			background-color: var(--black);
+			color: var(--white);
+			border: none;
+			border-radius: 10px;
+
+			width: 100%;
+			height: 50px;
+			cursor: pointer;
+		}
+	}
+}

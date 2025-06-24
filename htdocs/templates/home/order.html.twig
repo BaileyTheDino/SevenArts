@@ -29,6 +29,19 @@
 		{% endfor %}
 	</section>
 
+	<div class="tab-selection-overlay" id="tabSelectionPopup" style="display: none;">
+		<div class="tab-selection-container">
+			<div class="tab-selection-header">
+				<h3 class="tab-selection-title">Select a Tab</h3>
+				<button class="tab-selection-close" id="closeTabSelection">&times;</button>
+			</div>
+			<div class="tab-selection-content">
+				<ul class="tab-selection-list" id="tabSelectionList">
+				</ul>
+			</div>
+		</div>
+	</div>
+
 	{% include "home/components/cart-popup.html.twig" %}
 
 	{% include "home/components/nav.html.twig" %}

@@ -1,0 +1,36 @@
+{% block cart_content %}
+	<div class="cart-content">
+		{% if cart.items is empty %}
+			Cart is empty!
+		{% else %}
+			{% for product in cart.items %}
+				<div class="record">
+					<p>{{ product.quantity }}x {{ product.name }}, {{ product.amount }}</p>
+					<p>€{{ product.value|number_format(2, '.', '') }}</p>
+				</div>
+			{% endfor %}
+
+			<div class="cart-divider"></div>
+			<div class="record">
+				<p>Total</p>
+				<p>€{{ cart.total|number_format(2, '.', '') }}</p>
+			</div>
+		{% endif %}
+	</div>
+
+
+	{% if cart.items is not empty %}
+		<div class="cart-actions">
+
+			<div class="action-group">
+				<button class="js-reset-cart">Reset cart</button>
+			</div>
+
+			<div class="action-group">
+				<button class="js-add-to-tab">Add to tab</button>
+				<button class="js-pay-now">Pay now</button>
+			</div>
+
+		</div>
+	{% endif %}
+{% endblock %}

@@ -1,5 +1,10 @@
 {% block nav %}
-	<div class="product-box">
+	<div
+		class="product-box"
+		data-name="{{ name }}"
+		data-amount="{{ amount }}"
+		data-value="{{ value }}"
+	>
 		<div class="product-image">
 			<img src="{{ asset(imageName) }}" alt="">
 		</div>
