@@ -17,4 +17,13 @@ final class TabRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Tab::class);
     }
+
+    public function save(Tab $tab, bool $flush = true): void
+    {
+        $this->getEntityManager()->persist($tab);
+
+        if ($flush === true) {
+            $this->getEntityManager()->flush();
+        }
+    }
 }

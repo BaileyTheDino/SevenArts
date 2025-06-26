@@ -25,6 +25,12 @@ class Tab
     #[ORM\Column(length: 255)]
     private ?string $imageUrl = null;
 
+    /**
+     * @var ?array<mixed>
+     */
+    #[ORM\Column(type: 'json', nullable: true)]
+    private ?array $orderData = null;
+
     public function getName(): ?string
     {
         return $this->name;
@@ -57,6 +63,24 @@ class Tab
     public function setImageUrl(string $imageUrl): static
     {
         $this->imageUrl = $imageUrl;
+
+        return $this;
+    }
+
+    /**
+     * @return ?array<mixed>
+     */
+    public function getOrderData(): ?array
+    {
+        return $this->orderData;
+    }
+
+    /**
+     * @param ?array<mixed> $orderData
+     */
+    public function setOrderData(?array $orderData): static
+    {
+        $this->orderData = $orderData;
 
         return $this;
     }

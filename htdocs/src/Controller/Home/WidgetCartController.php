@@ -57,7 +57,31 @@ final class WidgetCartController extends AbstractController
             return new JsonResponse(['success' => false]);
         }
 
-        /* TODO: Save cartItems to Tab entity and increase Tab total. */
+        $tab->setPrice($tab->getPrice() + $cart['total']);
+
+        $orderData = $tab->getOrderData() ?? [];
+
+        foreach ($cart['items'] as $item) {
+            $key = $item['name'] . $item['amount'];
+
+            /* If it's already present just add the quantities together. */
+            if (array_key_exists($key, $orderData) === true) {
+                $orderData[$key]['quantity'] = $orderData[$key]['quantity'] + $item['quantity'];
+
+                continue;
+            }
+
+            $orderData[$key] = [
+                'name' => $item['name'],
+                'amount' => $item['amount'],
+                'value' => $item['value'],
+                'quantity' => $item['quantity'],
+            ];
+        }
+
+        $tab->setOrderData($orderData);
+
+        $this->tabRepository->save($tab);
 
         return new JsonResponse(['success' => true]);
     }
