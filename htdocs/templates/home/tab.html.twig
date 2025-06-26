@@ -9,7 +9,7 @@
 
 	<section class="tabs">
 		{% for tab in tabList %}
-				<div class="tab-item">
+				<div class="tab-item" data-id="{{ tab.id }}">
 					{% include "home/components/tab-box.html.twig" with ({
 						name: tab.name,
 						total: tab.total,

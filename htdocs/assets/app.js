@@ -23,7 +23,9 @@ import './styles/home/gpt.css';
 import Login from "./JS/login.js";
 import PopUp from "./JS/popup.js";
 import AddToCart from "./JS/addToCart.js";
+import Tabs from "./JS/tabs.js";
 
 new Login();
 new PopUp();
 new AddToCart();
+new Tabs();

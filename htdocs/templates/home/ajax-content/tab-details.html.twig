@@ -1,0 +1,47 @@
+{% block tab_details %}
+	<div class="tab-details">
+		<div class="tab-details-header">
+
+			<div class="tab-details-info">
+				<h4 class="tab-details-name">{{ tab.name }}</h4>
+			</div>
+		</div>
+
+		<div class="tab-receipt">
+			<div class="receipt-header">
+				<h5>Order Details</h5>
+			</div>
+
+			<div class="receipt-items">
+				{% for key, item in tab.orderData %}
+					<div class="receipt-item">
+						<div class="item-details">
+							<span class="item-name">{{ item.name }}</span>
+							<span class="item-amount">({{ item.amount }})</span>
+						</div>
+						<div class="item-quantity">{{ item.quantity }}x</div>
+						<div class="item-price">€{{ (item.value * item.quantity)|number_format(2, '.', ',') }}</div>
+					</div>
+				{% endfor %}
+			</div>
+
+			<div class="receipt-divider"></div>
+
+			<div class="receipt-total">
+				<div class="total-row">
+					<span class="total-label">Total</span>
+					<span class="total-amount">€{{ tab.price|number_format(2, '.', ',') }}</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="tab-actions">
+			<button type="button" class="btn btn-primary" data-action="pay" data-tab-id="{{ tab.id }}">
+				Pay now
+			</button>
+			<button type="button" class="btn btn-danger" data-action="delete" data-tab-id="{{ tab.id }}">
+				DELETE
+			</button>
+		</div>
+	</div>
+{% endblock %}

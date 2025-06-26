@@ -26,4 +26,13 @@ final class TabRepository extends ServiceEntityRepository
             $this->getEntityManager()->flush();
         }
     }
+
+    public function delete(Tab $tab, bool $flush = true): void
+    {
+        $this->getEntityManager()->remove($tab);
+
+        if ($flush === true) {
+            $this->getEntityManager()->flush();
+        }
+    }
 }

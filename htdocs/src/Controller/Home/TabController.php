@@ -44,6 +44,7 @@ final class TabController extends AbstractController
         foreach ($tabs as $tab) {
             /** @var Tab $tab */
             $formattedTabs[] = [
+                'id' => $tab->getId()->toString(),
                 'name' => $tab->getName(),
                 'total' => sprintf('€%.2f', $tab->getPrice()),
                 'imageName' => $tab->getImageUrl(),
