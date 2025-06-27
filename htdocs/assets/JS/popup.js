@@ -22,13 +22,16 @@ export default class {
 			popupEl.classList.remove('open');
 
 			const loader = document.querySelector('.loader');
-			loader.classList.remove('hide');
+			if (loader) {
+				loader.classList.remove('hide');
+			}
 
 			const popUpContent = document.querySelector('.popup-content');
-			popUpContent.innerHTML = '';
+			if (popUpContent) {
+				popUpContent.innerHTML = '';
+			}
 		});
 
-		// Initialize tab selection popup
 		this.initTabSelectionPopup();
 	}
 
@@ -56,29 +59,7 @@ export default class {
 				.catch((error) => {
 					console.log(error);
 				});
-
-			return;
 		}
-
-		if (type === 'tab') {
-			this.getPopupContent(
-				'app.widget.tab.getContent',
-				{
-					'test': 'test',
-				},
-			)
-				.then((response) => {
-					console.log(response);
-				})
-				.catch((error) => {
-					console.log(error);
-				});
-
-			return;
-
-		}
-
-		console.error('invalid popup type provided');
 	}
 
 	async getPopupContent(route, data) {

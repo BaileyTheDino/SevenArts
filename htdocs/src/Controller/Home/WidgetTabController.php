@@ -95,4 +95,19 @@ final class WidgetTabController extends AbstractController
 
         return new JsonResponse(['success' => true]);
     }
+
+    #[Route('/widgets/tab/create', name: 'app.widget.tab.createNew')]
+    public function createTab(Request $request): JsonResponse
+    {
+        $data = json_decode($request->getContent(), true);
+
+        $tab = new Tab();
+        $tab->setName($data['name'] ?? 'Not available');
+        $tab->setImageUrl($data['imageName'] ?? 'images/tab/face-1.svg');
+        $tab->setPrice(0.0);
+
+        $this->tabRepository->save($tab);
+
+        return new JsonResponse(['success' => true]);
+    }
 }

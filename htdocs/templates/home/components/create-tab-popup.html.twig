@@ -5,5 +5,64 @@
 {% block title %}Create tab{% endblock %}
 
 {% block popup_inner %}
-	<h1>Create tab popup</h1>
+	<form id="tabForm">
+		<div class="form-group">
+			<label for="tabName">Name</label>
+			<input
+				type="text"
+				id="tabName"
+				name="name"
+				class="name-input"
+				placeholder="Enter tab name"
+				required
+			>
+		</div>
+
+		<div class="form-group">
+			<label>Icon</label>
+			<div class="icon-grid">
+				<div class="icon-option">
+					<input type="radio" name="icon" value="images/tab/face-1.svg" id="icon1">
+					<label for="icon1" class="icon-button">
+						<img src="{{ asset('images/tab/face-1.svg') }}" alt="icon 1">
+					</label>
+				</div>
+				<div class="icon-option">
+					<input type="radio" name="icon" value="images/tab/face-2.svg" id="icon2">
+					<label for="icon2" class="icon-button">
+						<img src="{{ asset('images/tab/face-2.svg') }}" alt="icon 2">
+					</label>
+				</div>
+				<div class="icon-option">
+					<input type="radio" name="icon" value="images/tab/face-3.svg" id="icon3">
+					<label for="icon3" class="icon-button">
+						<img src="{{ asset('images/tab/face-3.svg') }}" alt="icon 3">
+					</label>
+				</div>
+				<div class="icon-option">
+					<input type="radio" name="icon" value="images/tab/face-4.svg" id="icon4">
+					<label for="icon4" class="icon-button">
+						<img src="{{ asset('images/tab/face-4.svg') }}" alt="icon 4">
+					</label>
+				</div>
+				<div class="icon-option">
+					<input type="radio" name="icon" value="images/tab/face-5.svg" id="icon5">
+					<label for="icon5" class="icon-button">
+						<img src="{{ asset('images/tab/face-5.svg') }}" alt="icon 5">
+					</label>
+				</div>
+				<div class="icon-option">
+					<input type="radio" name="icon" value="images/tab/face-6.svg" id="icon6">
+					<label for="icon6" class="icon-button">
+						<img src="{{ asset('images/tab/face-6.svg') }}" alt="icon 6">
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<button type="submit" class="create-button">Create</button>
+
+		<div class="error-message" id="errorMessage"></div>
+		<div class="success-message" id="successMessage"></div>
+	</form>
 {% endblock %}
