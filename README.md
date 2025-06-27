@@ -2,7 +2,9 @@
 
 ## ℹ️ General
 
-Simple cashier system for SevenArts. All the things are hardcoded.
+Simple cashier system for SevenArts. Most things are hardcoded.
+
+This took a total of 6h56m! For that time I think it turned out okay at least. A demo of the project has been added in the root of the project.
 
 ## Seven Arts specific commands
 
